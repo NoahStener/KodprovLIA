@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model NoahStener_KodprovLIA.Models.CarIssueViewModel
+
+<h1>Fyll fälten nedan för att skicka rapport</h1>
+
+<form method="post" asp-action="AddCarIssue" asp-controller="Car">
+    <div class="mt-3">
+        <label class="form-label">Registreringsnummer</label>
+        <input type="text" class="form-control" asp-for="RegNumber" />
+        <span asp-validation-for="RegNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Modell t.ex (Volvo v70)</label>
+        <input type="text" class="form-control" asp-for="Model" />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Beskriv felet</label>
+        <input type="text" class="form-control" asp-for="Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Datum</label>
+        <input type="date" class="form-control" asp-for="IssueReported" />
+        <span asp-validation-for="IssueReported" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Skicka</button>
+    </div>
+</form>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["MessageType"]">@TempData["Message"]</div>
+}

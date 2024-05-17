@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model NoahStener_KodprovLIA.Models.Entities.Car
+
+<h1>Historik för @Model.RegNumber</h1>
+
+@if(Model != null)
+{
+    @if(Model.CarIssues != null && Model.CarIssues.Any())
+    {
+        <div class="car-issues">
+            <h2>Felrapporer</h2>
+            <ul>
+                @foreach(var issue in Model.CarIssues)
+                {
+                    <li class="car-issue">
+                       <span class="issue-description">@issue.Description</span> 
+                       <span class="issue-date">@issue.IssueReported.ToShortDateString()</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">Inget tidigare registrerat för detta fordon</div>
+    }
+
+}

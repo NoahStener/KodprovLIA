@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NoahStener_KodprovLIA</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NoahStener_KodprovLIA.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main role="main" class="pb-3">
+        <div class="text-center">
+            <div class="py-5">
+                <h2>Fordonsregister prototyp</h2>
+                <p>Välj alternativ nedan</p>
+                <div class="home-options mt-4">
+                    <a class="btn btn-primary btn-lg m-2" asp-area="" asp-controller="Car" asp-action="ShowCars">Alla Fordon</a>
+                    <a class="btn btn-primary btn-lg m-2" asp-area="" asp-controller="Car" asp-action="AddCarIssue">Skicka Felrapport</a>
+                    <a class="btn btn-primary btn-lg m-2" asp-area="" asp-controller="Car" asp-action="EnterCarReg">Hämta Fordonshistorik</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <p>&copy; 2024 - Noah Stener Kodprov Varbergs Kommun</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

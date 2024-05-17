@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model List<NoahStener_KodprovLIA.Models.Entities.Car>
+
+
+<h1>Registrerade Fordon</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Registreringsnummer</th>
+            <th>Modell</th>
+            <th>Editera</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.CarID</td>
+                <td>@car.RegNumber</td>
+                <td>@car.Model</td>
+                <td>
+                    <a>Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

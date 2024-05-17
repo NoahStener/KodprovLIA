@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+@model NoahStener_KodprovLIA.Models.CarIssueViewModel
+
+<h1>Sök Fordonshistorik</h1>
+<form asp-action="CarHistory" asp-controller="Car" method="get">
+
+    <div class="mt-3">
+        <label class="form-label" for="regNum">Registreringsnummer</label>
+        <input type="text" class="form-control" id="regNum" name="regNum" required/>
+    </div>
+    <div class="mt-3">
+      <button type="submit" class="btn btn-primary">Sök</button>
+    </div>
+</form>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["MessageType"]">@TempData["Message"]</div>
+}

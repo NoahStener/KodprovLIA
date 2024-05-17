@@ -1,0 +1,43 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.car-issues {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.car-issue {
+    background-color: lightcyan;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+    list-style-type: none;
+}
+
+.issue-description {
+    font-weight: bold;
+}
+
+.issue-date {
+    float: right;
+    opacity: 0.8;
+}
